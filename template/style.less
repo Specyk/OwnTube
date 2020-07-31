@@ -1,8 +1,137 @@
-@color-base: #2d5e8b;  
-.class1 {  
-  background-color: @color-base;  
-  .class2 {  
-    background-color: #fff;  
-    color: @color-base;  
-  }  
-}   
+@color-base: #eee;
+
+body {
+  font: Verdana #111;
+}
+
+.Section-title {
+  display: flex;
+  padding: 0em 1em;
+}
+
+.App {
+  background-color: @color-base;
+  > * {
+    display: flex;
+  }
+  header {
+    width: 100%;
+    justify-content: space-between;
+    .brand {
+      padding: 1em;
+    }
+    nav {
+      flex: 2;
+      background-color: #ede;
+      display: flex;
+      justify-content: space-between;
+      form {
+        padding: 0 1em;
+        display: flex;
+        align-items: center;
+        input[type="text"] {
+          width: 24em;
+        }
+        input[type="submit"] {
+          width: 2em;
+        }
+      }
+      ul {
+        display: flex;
+        list-style: none;
+        li {
+          padding: 0 1em;
+        }
+      }
+    }
+    background-color: #aaa;
+  }
+  main {
+    height: 100vh;
+    background-color: #aab;
+    display: flex;
+    .ContentItems {
+      h2 {
+        padding: 0em 1em;
+      }
+      height: 100vh;
+      flex: 4;
+      .VideoList {
+        ul {
+          list-style: none;
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+          column-gap: 1em;
+          row-gap: 1em;
+          justify-content: flex-start;
+          .item {
+            padding: 1em 1em;
+            border-radius: 1em;
+            background-color: #99a;
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+            height: 200px;
+            img {
+              width: 300px;
+              height: 200px;
+              background-color: #444;
+            }
+            .video-title {
+              height: 3em;
+              display: flex;
+              align-items: center;
+            }
+          }
+        }
+      }
+    }
+    .Queue {
+      flex: 1;
+      ul {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        li:first-child {
+          border-radius: 1em 1em 0em 0em;
+        }
+        li:last-child {
+          border-radius: 0em 0em 1em 1em;
+        }
+
+        li {
+          display: flex;
+          padding: 0 1em;
+          align-items: center;
+          height: 2em;
+          background-color: #99a;
+          width: 100%;
+        }
+      }
+    }
+  }
+  .Controls {
+    background-color: #113;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    height: 5em;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .controls-container {
+      width: 100%;
+      display: flex;
+      justify-content: space-evenly;
+      > * {
+        background-color: #010111;
+        border-radius: 0.2em;
+        span {
+          padding: 1em;
+        }
+      }
+    }
+  }
+}
