@@ -1,0 +1,24 @@
+{
+  "name": "OwnTube",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "template": "cd template && reload -b"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Specyk/OwnTube.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Specyk/OwnTube/issues"
+  },
+  "homepage": "https://github.com/Specyk/OwnTube#readme",
+  "devDependencies": {
+    "reload": "^3.1.0"
+  }
+}
