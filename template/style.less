@@ -1,7 +1,17 @@
 @color-base: #eee;
+@entry: #99a;
+@entry-hover: #778;
+@topbar-height: 3em;
+@bottombar-height: 5em;
+@main-bg: #aab;
+
+button {
+  cursor: pointer;
+}
 
 body {
-  font: Verdana #111;
+  font-family: Verdana;
+  background-color: @main-bg;
 }
 
 .Section-title {
@@ -10,19 +20,23 @@ body {
 }
 
 .App {
-  background-color: @color-base;
+  background-color: @main-bg;
   > * {
     display: flex;
   }
   header {
+    background-color: @main-bg;
     width: 100%;
+    height: @topbar-height;
     justify-content: space-between;
+    position: fixed;
     .brand {
       padding: 1em;
     }
     nav {
       flex: 2;
       background-color: #ede;
+      border-radius: 0 0 0em 1em;
       display: flex;
       justify-content: space-between;
       form {
@@ -32,8 +46,12 @@ body {
         input[type="text"] {
           width: 24em;
         }
-        input[type="submit"] {
-          width: 2em;
+        button {
+          color: #667;
+          border: 0;
+        }
+        button:hover {
+          color: #001;
         }
       }
       ul {
@@ -44,17 +62,17 @@ body {
         }
       }
     }
-    background-color: #aaa;
   }
   main {
-    height: 100vh;
     background-color: #aab;
     display: flex;
+    padding-top: @topbar-height;
+    padding-bottom: @bottombar-height;
     .ContentItems {
       h2 {
         padding: 0em 1em;
       }
-      height: 100vh;
+      // height: 100vh;
       flex: 4;
       .VideoList {
         ul {
@@ -65,9 +83,10 @@ body {
           row-gap: 1em;
           justify-content: flex-start;
           .item {
+            cursor: pointer;
             padding: 1em 1em;
-            border-radius: 1em;
-            background-color: #99a;
+            border-radius: 0.4em;
+            background-color: @entry;
             display: flex;
             flex-direction: column;
             width: 300px;
@@ -83,13 +102,16 @@ body {
               align-items: center;
             }
           }
+          .item:hover {
+            background-color: @entry-hover;
+          }
         }
       }
     }
     .Queue {
       flex: 1;
       ul {
-        width: 100%;
+        // width: 100%;
         display: flex;
         flex-direction: column;
         list-style: none;
@@ -105,22 +127,32 @@ body {
           padding: 0 1em;
           align-items: center;
           height: 2em;
-          background-color: #99a;
-          width: 100%;
+          background-color: @entry;
+          // width: 100%;
+          cursor: pointer;
+        }
+        li:hover {
+          background-color: @entry-hover;
         }
       }
     }
   }
   .Controls {
+    padding: 1em;
     background-color: #113;
     color: white;
     position: fixed;
     bottom: 0;
-    height: 5em;
+    height: @bottombar-height;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    .title {
+      span.oi {
+        margin-right: 1em;
+      }
+    }
     .controls-container {
       width: 100%;
       display: flex;
@@ -130,6 +162,10 @@ body {
         border-radius: 0.2em;
         span {
           padding: 1em;
+          cursor: pointer;
+        }
+        span:hover {
+          color: #66a;
         }
       }
     }
